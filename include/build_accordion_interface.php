@@ -60,15 +60,15 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
   <div class="accordion <?php echo  $custom_class;if(!$loopIndex) echo"active "; echo $custom_class?$custom_class:""; ?>" >
   <textarea type='text' oninput="verticalHeight.call(this)" placeholder="<?php echo $heading; ?>" onChange="removeWhitespace(this)" id='caption_accordion[]' name='caption_accordion[]'  exist='true'><?php echo ($caption_accordion); ?></textarea>
 
-  <span class="fa-solid fa-trash cursor-pointer" onClick="addnewnew.call(this,1,false,<?php echo $loopIndex; ?>)"></span>
-  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="changeText(this)">
+  <span class="fa-solid fa-trash cursor-pointer" onClick="openPopup.call(this,1,false,<?php echo $loopIndex; ?>)"></span>
+  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)">
     <i class="fa-solid color-white ml-1em jump <?php if(!$loopIndex) echo $up;else echo $down; ?> " style="color:<?php echo $iconColor; ?>;font-size:<?php echo $iconSize; ?>;" ></i></button>
   </div>
         <div class="panel" <?php if(!$loopIndex)echo'style="max-height: 230px;"'; ?> >
 <?php require('rich_text_editor.php'); ?>
 
-        </div><div class="addnewnew text-center" data-column="1">
-  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="addnewnew.call(this,1,true,<?php echo $loopIndex; ?>)"></i>
+        </div><div class="openPopup text-center" data-column="1">
+  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,1,true,<?php echo $loopIndex; ?>)"></i>
 </div>
         <?php if($loopIndex==($TotalCountOfItems)-1){ 
           ?>
@@ -88,8 +88,8 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
 
   <div class="accordion <?php if(!$loopIndex) echo"active ";  echo $custom_class?$custom_class:""; ?>" >
   <textarea type='text' oninput="verticalHeight.call(this)" placeholder="<?php echo $heading; ?>" onChange="removeWhitespace(this)" id='caption_accordion[]' name='caption_accordion[]' ><?php echo ($caption_accordion); ?></textarea>
-  <span class="fa-solid fa-trash cursor-pointer" onClick="addnewnew.call(this,1,false,<?php echo $loopIndex; ?>)"></span>
-  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="changeText(this)">
+  <span class="fa-solid fa-trash cursor-pointer" onClick="openPopup.call(this,1,false,<?php echo $loopIndex; ?>)"></span>
+  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)">
     <i class="fa-solid color-white ml-1em jump <?php if(!$loopIndex) echo $up;else echo $down; ?>"style="color:<?php echo $iconColor; ?>;font-size:<?php echo $iconSize; ?>;" ></i></button>
   </div>
         <div class="panel" <?php if(!$loopIndex)echo'style="max-height: 235px;"'; ?> >
@@ -97,8 +97,8 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
 <?php require('rich_text_editor.php'); ?>
 
         </div>
-<div class="addnewnew text-center" data-column="1">
-  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="addnewnew.call(this,1,true,<?php echo $loopIndex; ?>)"></i>
+<div class="openPopup text-center" data-column="1">
+  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,1,true,<?php echo $loopIndex; ?>)"></i>
 </div>
    
 
@@ -110,14 +110,14 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
     <?php } //end $loopIndex==3 ?>
   <div class="accordion <?php echo $custom_class?$custom_class:""; ?>">
   <textarea type='text' oninput="verticalHeight.call(this)" placeholder="<?php echo $heading; ?>" onChange="removeWhitespace(this)" id='caption_accordion[]' name='caption_accordion[]' ><?php echo ($caption_accordion); ?></textarea>
-  <span class="fa-solid fa-trash cursor-pointer" onClick="addnewnew.call(this,2,false,<?php echo $loopIndex2; ?>)"></span>
-  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="changeText(this)">
+  <span class="fa-solid fa-trash cursor-pointer" onClick="openPopup.call(this,2,false,<?php echo $loopIndex2; ?>)"></span>
+  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)">
     <i class="fa-solid color-white ml-1em jump <?php if(!$loopIndex) echo $up;else echo $down; ?> "  style="color:<?php echo $iconColor; ?>;font-size:<?php echo $iconSize; ?>;"></i></button>
   </div>
         <div class="panel">
 <?php require('rich_text_editor.php'); ?>
-        </div><div class="addnewnew text-center" data-column="2">
-  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="addnewnew.call(this,2,true,<?php echo $loopIndex2; ?> )"></i><?php $loopIndex2++; ?>
+        </div><div class="openPopup text-center" data-column="2">
+  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,<?php echo $loopIndex2; ?> )"></i><?php $loopIndex2++; ?>
 </div>
   <?php  $loopIndex++;
 }//end else
@@ -133,15 +133,15 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
       <?php for($k=0;$k<3;$k++){?>
                   <div class="accordion <?php echo $k?'':'active'; ?> title-text" >
   <textarea type='text' oninput="verticalHeight.call(this)" placeholder="<?php echo $heading; ?>" onChange="removeWhitespace(this)" id='caption_accordion[]' name='caption_accordion[]' ><?php echo ($heading); ?></textarea>
-  <span class="fa-solid fa-trash cursor-pointer" onClick="addnewnew.call(this,1,false,<?php echo$k; ?>)"></span>
-  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="changeText(this)">
+  <span class="fa-solid fa-trash cursor-pointer" onClick="openPopup.call(this,1,false,<?php echo$k; ?>)"></span>
+  <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)">
     <i class="fa-solid color-white ml-1em fa-angle-<?php echo$k?'down':'up'; ?> jump" ></i></button>
   </div>
         <div class="panel" style="<?php echo$k?'':'max-height: 230px;'; ?>">
       <?php require('rich_text_editor.php'); ?>
         </div>
-<div class="addnewnew text-center" data-column="1">
-  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="addnewnew.call(this,1,true,<?php echo($k+1); ?>)"></i>
+<div class="openPopup text-center" data-column="1">
+  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,1,true,<?php echo($k+1); ?>)"></i>
 </div>
   <?php    } ?>
  </div><?php } ?>
