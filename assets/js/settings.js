@@ -10,15 +10,15 @@ var index = document.querySelectorAll('.openPopup > i').length;
 			jQuery('input[name=colum-1]').val("1");
 		}
 		else{
-			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,0)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white ml-1em '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
+			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,0)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
  			jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
 	 	jQuery('.column-2>div:nth-child(2)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,0)"></i></div>');
 	
-			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,1)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
+			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,1)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
  			jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
 				jQuery('.column-2>div:nth-child(5)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,1)"></i></div>');
 	
-			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,2)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'"></i></button></div>') ;
+			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,2)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'"></i></button></div>') ;
  	 		jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description +'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
 	 	jQuery('.column-2>div:nth-child(8)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,2)"></i></div>');
 			
@@ -26,53 +26,32 @@ var index = document.querySelectorAll('.openPopup > i').length;
 		}
 		changePanelColor();changeTitleColor();changePanelColorBg();changeTitleColorBg();
 	}
-function clickTitleBg(){event.stopPropagation();
-	jQuery('#titlebg').click();
+
+function changeAccordColor(id){
+	event.stopPropagation();
+	jQuery(id).click();
 }
-function clickPanelBg(){event.stopPropagation();
-	jQuery('#panelbg').click();
-}
+
 function changeTitleColorBg(){
 jQuery('.accordion').css("background-color",jQuery('#titlebg').val());
 jQuery('.accordion>textarea').css("background-color",jQuery('#titlebg').val());
-//generateParams();
 
 }
-function changePanelColorBg(){
 
+function changePanelColorBg(){
 jQuery('.panel').css("background-color",jQuery('#panelbg').val());
 jQuery('.panel textarea').css("background-color",jQuery('#panelbg').val());
-
-//generateParams();
-
 }
-// ==============
-function clickTileColor(){event.stopPropagation();
-	jQuery('#titlecolor').click();
-} 
+
 function changeTitleColor(){		
 	jQuery('.accordion>textarea').css("color",jQuery('#titlecolor').val());
+}
 
-	//generateParams();
-}
-function clickPanelColor(){event.stopPropagation();
-	jQuery('#panelcolor').click();
-}
 function changePanelColor(){
 	jQuery('.panel textarea').css("color",jQuery('#panelcolor').val());
 	jQuery('.panel').css("color",jQuery('#panelcolor').val());
-
 }
 
-// function clickTileHover(){
-// 	jQuery('#tilehover').click();
-// }
-// function changeTileHover(){
-// 	jQuery('.panel').css("color",jQuery('#panelcolor').val());
-// }
-// function TitleHoverColor(){
-// 	jQuery(this).css("background-color",jQuery('#tilehover').val());
-// }
 function clipboard(){
  var copyText = jQuery(".result-shortcode");  
  copyText.select();
@@ -159,9 +138,6 @@ jQuery('.column-2').append('<button type="button" class=" res-d-none add-col-2">
 jQuery('.column-2').append(' <button type="button" class="res-d-none rem-col-2"></button>');
 changePanelColor();changeTitleColor();changePanelColorBg();changeTitleColorBg();
 }
-// 
-
-  // wusiwug editor start
 
 function changeFontSize(value) {
 
@@ -228,12 +204,11 @@ const htmlInput=this.parentNode.querySelector('.html-input');
   const htmlCode = htmlInput.value;
   output.innerHTML = htmlCode;
 }
-// r start
+
 // Update HTML editor value when output changes
 function outputHtmlRender() {
   updateHtmlEditorValue.call(this);
 }
-
 
 // Function to update HTML editor value when output changes
 function updateHtmlEditorValue() {
@@ -241,7 +216,6 @@ function updateHtmlEditorValue() {
   const htmlInput=this.parentNode.parentNode.querySelector('.html-input');
   htmlInput.value = outputContent;
 }
-  // wusiwug editor end
 
 function verticalHeight(){
 	  this.style.height = "";
@@ -375,7 +349,7 @@ else{
 	 	langWords.querySelector('.addNew-lang').innerHTML,
 	 	langWords.querySelector('.remove-lang').innerHTML,
 	 	index);
-	 //colNum,caption,detail,add,remove){
+
  }
  function addRichTextEditor(colNum,caption,detail,add,remove,index=false){
 			jQuery('.error').remove();
@@ -489,5 +463,16 @@ let icon=this.querySelector('.plummet');
 		  icon.classList.add('fa-caret-down');
 		  iconsContainer.classList.remove('show');
 		}
+
+	}
+	function mobileMenu(){ let nextElement=jQuery(this).next();
+let css=nextElement.css('display');
+		if( css==='block'){ 
+			nextElement.css('display','none');
+		}
+		else{
+		 nextElement.css('display','block');
+		}
+
 
 	}
