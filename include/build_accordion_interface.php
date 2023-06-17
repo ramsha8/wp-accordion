@@ -4,7 +4,14 @@
 
  <div class="wrap pr-20px" >
 
+<?php 
+ $delAcc=__('Delete Accordion Panel','accordio');
+ $delAcc2=__('Are you sure you want to delete this panel?','accordio');
+ $addAcc=__('Add Accordion Panel','accordio');
+ $addAcc2=__('Are you sure you want to add a new panel?','accordio');
+ $customCSS=__('Add Custom CSS','accordio');
 
+ ?>
       <h1 class="res-text-center" ><?php _e('Edit Accordion','accordio'); ?></h1>
       <h2 class="res-text-center" > <?php _e('Customize Accordion according to your requirement.','accordio'); ?></h2>
 <?php 
@@ -55,7 +62,8 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
                          $accordion_explanation = (wp_kses_post($accordion_panel_data['explanation_accordion']));
                          if($colum1){$endDivs="";?>
  <?php if(!$loopIndex){ ?>  
-              <div class="d-flex mt-1em res-d-block"><div class="width-600px column-1 res-text-center">
+              <div class="d-flex mt-1em res-d-block">
+                <div class="width-600px column-1 res-text-center">
                       <?php } ?>
   <div class="accordion <?php echo  $custom_class;if(!$loopIndex) echo"active "; echo $custom_class?$custom_class:""; ?>" >
   <textarea type='text' oninput="verticalHeight.call(this)" placeholder="<?php echo $heading; ?>" onChange="removeWhitespace(this)" id='caption_accordion[]' name='caption_accordion[]'  exist='true'><?php echo ($caption_accordion); ?></textarea>

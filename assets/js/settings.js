@@ -11,16 +11,16 @@ var index = document.querySelectorAll('.openPopup > i').length;
 		}
 		else{
 			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,0)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
- 			jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
-	 	jQuery('.column-2>div:nth-child(2)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,0)"></i></div>');
+ 	jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <div> <button type="button" class="editor-button" onclick="format(\'bold\')" > <i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"> <i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> <button type="button" onClick="sourceEditorClick.call(this)" class="editor-button">Source Editor</button></div> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0">Rich Text Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
+ 		jQuery('.column-2>div:nth-child(2)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,0)"></i></div>');
 	
 			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,1)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'" ></i></button></div>') ;
- 			jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
-				jQuery('.column-2>div:nth-child(5)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,1)"></i></div>');
+jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <div> <button type="button" class="editor-button" onclick="format(\'bold\')" > <i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"> <i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> <button type="button" onClick="sourceEditorClick.call(this)" class="editor-button">Source Editor</button></div> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0">Rich Text Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');			
+	jQuery('.column-2>div:nth-child(5)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,1)"></i></div>');
 	
 			jQuery('.sec-col').append('<div type="button" class="accordion title-text "> <textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" placeholder="'+title+'">'+title+'</textarea><span class="fa-solid fa-trash cursor-pointer mt-5" onClick="openPopup.call(this,2,false,2)"></span><button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"><i class="fa-solid color-white jump ml-1em  '+down+'" style="font-size: '+fs+';color:'+iconColor+'"></i></button></div>') ;
- 	 		jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description +'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');
-	 	jQuery('.column-2>div:nth-child(8)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,2)"></i></div>');
+jQuery('.sec-col').append('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <div> <button type="button" class="editor-button" onclick="format(\'bold\')" > <i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"> <i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> <button type="button" onClick="sourceEditorClick.call(this)" class="editor-button">Source Editor</button></div> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0">Rich Text Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +description+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+description+'"> '+description+'</textarea> </div> </div> </div>');	
+jQuery('.column-2>div:nth-child(8)').after('<div class="openPopup text-center" data-column="2"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,2,true,2)"></i></div>');
 			
 	 		jQuery('input[name=colum-1]').val("0");
 		}
@@ -127,17 +127,7 @@ function remPanelRes(){
 		}
 	}
 }
-function addNewPanelRes(caption,detail){
-jQuery('.column-2').removeClass('d-none');
-	jQuery('.error').remove();	
-	jQuery('.add-col-2').remove();
-	jQuery('.rem-col-2').remove();
-jQuery('.column-2').append('<button type="button" class="accordion title-text" onclick="accordToggle(this)"><textarea type="text" id="caption_accordion[]" name="caption_accordion[]" onChange="removeWhitespace(this)" exist="true" placeholder="'+caption+'">'+caption+'</textarea></button>');
- jQuery('.column-2').append('<div class="panel"><p class="p-0-12px" onClick="accordToggle(this,true)"><textarea onChange="removeWhitespace(this)" id="explanation_accordion[]" name="explanation_accordion[]" exist="true" row="3" placeholder="'+detail+'">'+detail+'</textarea></p></div>');
-jQuery('.column-2').append('<button type="button" class=" res-d-none add-col-2"></button>');
-jQuery('.column-2').append(' <button type="button" class="res-d-none rem-col-2"></button>');
-changePanelColor();changeTitleColor();changePanelColorBg();changeTitleColorBg();
-}
+
 
 function changeFontSize(value) {
 
@@ -169,25 +159,9 @@ function insertLink() {
 
 // Toggle the visibility of the panels when the button is clicked
 function toggleButtonfunc() {
+this.classList.add('d-none');
+this.parentNode.previousElementSibling.style.display='block';
 
-const htmlInput = this.parentNode.querySelector('.html-input');
-const output = this.parentNode.querySelector('.output');
-const editorPanel = this.parentNode.querySelector('.editor-panel');
-const editorToolbar= this.parentNode.previousElementSibling;
-  if (htmlInput.style.display === 'none') {
-    htmlInput.style.display = 'block';
-    output.style.display = 'none';
-    this.textContent = 'Rich Text Editor';
-    editorPanel.style.display='block';
-	editorToolbar.style.display = 'none';this.style.marginTop="-20px";
-  } else {
-    htmlInput.style.display = 'none';
-    output.style.display = 'block';
-    this.textContent = 'Source Editor';
-    editorToolbar.style.display = 'block';
-    renderOutput.call(this);
-    this.style.marginTop="-2.5em";
-  }
 }
 
 // Update output content and render output when HTML input changes
@@ -370,8 +344,7 @@ actualIndex=3*(index)+3;
 
 		jQuery('.column-'+colNum+'>div:nth-child('+actualIndex+')').after('<div class="accordion title-text" > <textarea type="text" oninput="verticalHeight.call(this)" placeholder="'+caption+'" onChange="removeWhitespace(this)" id="caption_accordion[]" name="caption_accordion[]" >'+caption+'</textarea><span class="mt-5 fa-solid fa-trash cursor-pointer" onClick="openPopup.call(this,'+colNum+',false,'+index+')"></span> <button type="button" class="b-none border-none cursor-pointer mr-halfem" onClick="accordToggle(this)"> <i class="fa-solid color-white jump ml-1em '+icon+'" style="color:'+color+';font-size:'+size+';"></i></button> </div>');
 			actualIndex++;
-		jQuery('.column-'+colNum+'>div:nth-child('+actualIndex+')').after('<div class="panel"> <div class="editor-toolbar p-9-5" onClick="accordToggle(this,true)"> <button type="button" class="editor-button" onclick="format(\'bold\')" ><i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"><i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> </div> <div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button">Source Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)"  contenteditable="true">' +detail+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+detail+'"> '+detail+'</textarea> </div> </div> </div>');
-	actualIndex++;
+jQuery('.column-'+colNum+'>div:nth-child('+actualInd2ex+')').after ('<div class="panel"> <div class="editor-toolbar p-9-5"> <div> <button type="button" class="editor-button" onclick="format(\'bold\')" > <i class="fa-solid fa-bold"></i></button> <button type="button" class="editor-button" onclick="format(\'italic\')"><i class="fa-solid fa-italic"></i></button> <button type="button" class="editor-button" onclick="format(\'insertUnorderedList\')"><i class="fa-solid fa-list-ul"></i> </button> <button type="button" class="editor-button" onclick="format(\'insertOrderedList\')"> <i class="fa-solid fa-list-ul"></i></button> <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-list-ul"></i></button> <select class="font-size-select ml-left-2em " onchange="changeFontSize.call(this,this.value)"> <option class="select-option" disabled selected value="">Font Size</option> <option class="select-option" value="1">Extra small</option> <option class="select-option"  value="2">Small</option> <option class="select-option" value="3">Normal</option> <option class="select-option" value="4">Large</option> <option class="select-option" value="5">Extra large</option> <option class="select-option" value="6">Huge</option> </select> <button type="button" onClick="sourceEditorClick.call(this)" class="editor-button">Source Editor</button> </div> </div><div class="editor-container"> <button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0">Rich Text Editor</button> <div class="output-panel"> <div class="output" oninput="outputHtmlRender.call(this)" contenteditable="true">' +detail+'</div> </div> <div class="editor-panel"> <textarea  id="explanation_accordion[]" name="explanation_accordion[]" value="" class="html-input" style="display:none;" oninput="textHtmlRender.call(this)" placeholder="'+detail+'"> '+detail+'</textarea> </div> </div> </div>');actualIndex++;
 		jQuery('.column-'+colNum+'>div:nth-child('+actualIndex+')').after('<div class="openPopup text-center" data-column="'+colNum+'"><i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,'+colNum+',true,'+(index+1)+')"></i></div>');
 index++;
 			changePanelColor();changeTitleColor();changePanelColorBg();changeTitleColorBg();
@@ -453,7 +426,6 @@ let icon=this.querySelector('.plummet');
 		  icon.classList.remove('fa-caret-up');	
 		  icon.classList.add('fa-caret-down');
 		} 
-    
   }
   function toggleIconShow(){
 	  const iconsContainer = document.querySelector('.iconsContainer');
@@ -463,7 +435,6 @@ let icon=this.querySelector('.plummet');
 		  icon.classList.add('fa-caret-down');
 		  iconsContainer.classList.remove('show');
 		}
-
 	}
 	function mobileMenu(){ let nextElement=jQuery(this).next();
 let css=nextElement.css('display');
@@ -473,6 +444,16 @@ let css=nextElement.css('display');
 		else{
 		 nextElement.css('display','block');
 		}
-
-
 	}
+function sourceEditorClick() {
+  var grandparentNode = this.parentNode.parentNode;
+  grandparentNode.style.display = 'none';
+  grandparentNode.nextElementSibling.style.display = 'block';
+  if (grandparentNode && grandparentNode.nextElementSibling && grandparentNode.nextElementSibling.firstElementChild) {
+    var buttonElement = grandparentNode.nextElementSibling.querySelector('button.toggle-button');
+
+    if (buttonElement) {
+      buttonElement.classList.remove('d-none')
+    }
+  }
+}

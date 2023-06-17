@@ -24,6 +24,7 @@ position:relative;
   margin:5px;
   border-radius: 5px;padding-bottom: 0px;padding-right:0px;
 }
+.mt-0{margin-top:0;}
 .accordion textarea,.panel textarea{border:none;}
 .accordion textarea{resize:vertical;}
 .accordion textarea:focus,.panel textarea:focus{border: none;
@@ -181,7 +182,8 @@ background:#d3d3d3;
 }
 
  select.font-size-select{ background-color: #f3f3f3;
-    min-height: 24px;border: 1px solid #646464;line-height: 1;font-size: 0.85rem;}  
+    min-height: 24px;border: 1px solid #646464;line-height: 1;font-size: 0.85rem;
+    padding-bottom: 7px;padding-top: 0.3rem;}  
 
 .html-input {
   z-index: 2;
@@ -200,7 +202,7 @@ background:#d3d3d3;
   display: none;
 } 
 
-.output-panel,.toggle-button {
+.output-panel {
   display: block;
 }
 .font-size-select{background:#d3d3d3;width:100px;}
@@ -224,7 +226,7 @@ background:#d3d3d3;
 .output-panel .output{
   overflow: overlay;
 }
-.editor-container>button{margin-top: -2.5em;}
+
 /*pop start*/
 .popup-accord,.popupcss {
   position: fixed;
@@ -401,7 +403,12 @@ div.editor-toolbar button.editor-button  {
 input.h-0{height:0;}
 div.accordion span.fa-trash{z-index: 1;}
 /* Styles for mobile ramsha start */
+@media (max-width: 1339px) {
+  select.font-size-select{width: 34px;background-position-x: 8px;}
+}
+div.accordion button{outline:none;}
 @media (max-width: 1316px) {
+  .output.pt-1-6em{text-align: left;}
   .accordion-navbar {
     display: none;
   }
@@ -459,9 +466,7 @@ div.accordion span.fa-trash{z-index: 1;}
     background: #f4f4f4;
   }
   .res-fs-11px{font-size:11px;}
-  .editor-toolbar.p-9-5{
-padding: 0px 0px 3em;
-  }
+
   .accordion-navbar select.iconsize-sel{width: 34px;background-position-x: 8px;}
   div.metabox-holder.columns-1{overflow: visible;}
   div.iconsContainer{
@@ -470,4 +475,31 @@ padding: 0px 0px 3em;
   .panel-popupcss.width-600px.bg-white.text-center{
     width: 300px;
   }.panel-popupcss textarea,.panel-popupcss input{width:260px;}
+}
+.pt-1-6em{padding-top:1.6em;}
+.editor-toolbar>div{display:flex;align-items:baseline;}
+
+
+@media (max-width: 410px) {
+  div.editor-toolbar >div{display: table-cell;}
+    div.accordion >textarea{width:100%;}
+}
+@media (max-width:290px){
+  div.editor-toolbar button.editor-button{padding-bottom: 5px !important;}
+
+}
+div.editor-toolbar>div :last-child{
+    order: 1;
+  margin-left: auto;
+} 
+div.editor-toolbar>div button:not(.last-child),
+div.editor-toolbar>div select {
+  margin-right: 2px; /* Adjust the spacing as needed */
+}
+@media (max-width: 1364px) and (min-width:1317px) {
+  .editor-toolbar>div{    display: block;
+    text-align: center;}
+      .editor-toolbar>div :last-child{
+        float: ;
+      }
 }
