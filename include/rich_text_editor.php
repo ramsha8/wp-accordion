@@ -7,19 +7,19 @@
   <button type="button" class="editor-button" onclick="insertLink()"><i class="fa-solid fa-link"></i></button>
 <select class="font-size-select" onchange="changeFontSize.call(this,this.value)">
   <option class="select-option" disabled selected value="">Font Size</option>
-  <option class="select-option" value="1">Extra small</option>
-  <option class="select-option"  value="2">Small</option>
-  <option class="select-option" value="3">Normal</option>
-  <option class="select-option" value="4">Large</option>
-  <option class="select-option" value="5">Extra large</option>
-  <option class="select-option" value="6">Huge</option>
+  <option class="select-option" value="1"><?php _e('Extra small','accordio'); ?></option>
+  <option class="select-option"  value="2"><?php _e('Small','accordio'); ?></option>
+  <option class="select-option" value="3"><?php _e('Normal','accordio'); ?></option>
+  <option class="select-option" value="4"><?php _e('Large','accordio'); ?></option>
+  <option class="select-option" value="5"><?php _e('Extra large','accordio'); ?></option>
+  <option class="select-option" value="6"><?php _e('Huge','accordio'); ?></option>
 </select>
-<button type="button" onClick="sourceEditorClick.call(this )" class="editor-button">Source Editor</button>
+<button type="button" onClick="sourceEditorClick.call(this )" class="editor-button"><?php _e('Source Editor','accordio'); ?></button>
 </div>
 </div>  
 
 <div class="editor-container">
-<button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0">Rich Text Editor</button>
+<button type="button" onClick="toggleButtonfunc.call(this)" class="toggle-button d-none mt-0"><?php _e('Rich Text Editor','accordio'); ?></button>
 
     <div class="output-panel">
     <div class="output pt-1-6em" oninput="outputHtmlRender.call(this)"  contenteditable="true"><?php echo isset($accordion_explanation)?stripslashes(htmlspecialchars_decode($accordion_explanation)): $detail; ?></div>

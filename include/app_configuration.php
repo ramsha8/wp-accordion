@@ -31,32 +31,20 @@ color:<?php echo sanitize_hex_color($titlecolor); ?>;
   		color:<?php echo sanitize_hex_color($panelcolor); ?>;
   	}
   </style>
-<?php 
- $heading=__('Write accordion title here.','accordio');
- $detail=__('Write accordion description here.','accordio');
- $addNew=__('Add new','accordio');
- $remove=__('Remove','accordio');
- $funcParams="'$heading','$detail','$addNew','$remove'";
- ?>
- <div class="d-none lang-words">
-      <span class="heading-lang"><?php echo $heading; ?></span>
-      <span class="detail-lang"><?php echo $detail; ?></span>
-      <span class="addNew-lang"><?php echo $addNew; ?></span>
-      <span class="remove-lang"><?php echo $remove; ?></span>
-</div>  <div class="navbar-toggle" onclick="mobileMenu.call(this)">
+  <div class="navbar-toggle" onclick="mobileMenu.call(this)">
     <div class="hamburger-line"></div>
     <div class="hamburger-line"></div>
     <div class="hamburger-line"></div>
   </div>
 <div class="accordion-navbar p-10 border-radius">
          <div class="d-flex justify-content-evenly">
-            <div class="d-flex flex-flow-col hover-bbbbbb cursor-pointer res-text-center text-center" onClick="addNewCol(<?php echo$funcParams; ?>)">
+            <div class="d-flex flex-flow-col hover-bbbbbb cursor-pointer res-text-center text-center" onClick="addNewCol()">
                  <i class="fa-solid fa-circle-plus fs-27px mt-9px res-left"></i>
                <div class="fs-14px p-9-5 mt-5 res-left res-fs-11px"><?php _e('Add New Column','accordio'); ?></div>
             </div>
             <div class="dropdown-accordion hover-bbbbbb cursor-pointer text-center res-left" onclick="accordionDropdown.call(this)">
                   <i class="fa-solid fa-brush font-size-2-8em mt-5"></i>
-  <div class="dropbtn fs-14px p-9-5 cursor-pointer res-fs-11px">Change Colors<i class="fa-solid fa-caret-down plummet fs-27px  cursor-pointer"></i></div>
+  <div class="dropbtn fs-14px p-9-5 cursor-pointer res-fs-11px"><?php _e('Change Colors','accordio'); ?><i class="fa-solid fa-caret-down plummet fs-27px  cursor-pointer"></i></div>
   <div class="dropdown-acontent">
    <div class="text-left pl-13px cursor-pointer res-text-center pb-5px" onClick="changeAccordColor.call(this,'#titlebg')">
   
@@ -82,36 +70,33 @@ color:<?php echo sanitize_hex_color($titlecolor); ?>;
 </div> 
 <div class="icon-setting hover-bbbbbb cursor-pointer pb-5px res-pi-fs" onclick="colorPickerShow.call(this)">
 
-  <label class="fs-14px p-9-5 text-center res-fs-11px">Change Icon Color:</label>
+  <label class="fs-14px p-9-5 text-center res-fs-11px"><?php _e('Change Icon Color:','accordio'); ?></label>
   <input type="color" class="iconColor" onclick="toggleIconShow();closeDropdown();" name="iconColor" oninput="changeIconColor.call(this)">
 </div>
-
-            
 <div class="d-flex flex-flow-col hover-bbbbbb cursor-pointer pb-5px res-text-center p-relative text-center dropdown-accordion2" onClick="toggleIcons.call(this)"><i class="fa-solid fa-icons font-size-2-8em mt-5 res-left"></i>
-               <div class="fs-14px p-9-5 cursor-pointer text-center res-left res-fs-11px">Change Icon of Accordion 
+               <div class="fs-14px p-9-5 cursor-pointer text-center res-left res-fs-11px"> 
+                <?php _e('Change Icon of Accordion','accordio'); ?>
                   <i class="fa-solid fa-caret-down fs-27px vertical-up-down"></i>
          
                </div>
                <div class="iconsContainer bg-white">
-             
-
 <?php require('fa-icons.php'); ?>
                </div>
            <!-- drop-down end -->
             </div> 
 <!-- custom-css start -->
 <div class="custom-css cursor-pointer hover-bbbbbb text-center res-left" onclick="cssPopup()">
-   <i class="fa-solid fa-file-code font-size-2-8em  mt-5 res-left"></i> <div class="popup-css fs-14px p-9-5 res-fs-11px">Add Custom CSS</div>
+   <i class="fa-solid fa-file-code font-size-2-8em  mt-5 res-left"></i> <div class="popup-css fs-14px p-9-5 res-fs-11px"><?php _e('Add Custom CSS','accordio'); ?></div>
 </div>
 <!-- custom-css end -->
 <div class="tailor-class cursor-pointer hover-bbbbbb text-center res-left" onclick="cssPopup(true)">
 <i class="fa-brands fa-css3-alt fs-3em mt-5 res-left"></i>
-<div class="popup-css fs-14px p-9-5 res-fs-11px">Add Custom Classes</div>
+<div class="popup-css fs-14px p-9-5 res-fs-11px"> <?php _e('Add Custom Class','accordio'); ?></div>
 </div>
        <div class="icon-size text-center hover-bbbbbb cursor-pointer pb-5px res-left">
   <i class="fa-solid fa-text-height fs-27px pt-5px pb-21px res-left"></i>
 <select class="fs-13px res-d-block res-fs-11px iconsize-sel" onchange="iconFont.call(this)" onclick="event.stopPropagation();" >
-      <option value="">Change Icon Size</option>
+      <option value=""><?php _e('Change Icon Size','accordio'); ?></option>
     <option value="12px">12px</option>
     <option value="16px">16px</option>    
     <option value="22px">22px</option>

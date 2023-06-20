@@ -3,15 +3,6 @@
 <div style=" overflow: hidden;padding: 10px;"onclick="if ((!document.querySelector('.dropdown-accordion').contains(event.target))&&(!document.querySelector('.dropdown-accordion2').contains(event.target))) {closeDropdown();toggleIconShow();}">
 
  <div class="wrap pr-20px" >
-
-<?php 
- $delAcc=__('Delete Accordion Panel','accordio');
- $delAcc2=__('Are you sure you want to delete this panel?','accordio');
- $addAcc=__('Add Accordion Panel','accordio');
- $addAcc2=__('Are you sure you want to add a new panel?','accordio');
- $customCSS=__('Add Custom CSS','accordio');
-
- ?>
       <h1 class="res-text-center" ><?php _e('Edit Accordion','accordio'); ?></h1>
       <h2 class="res-text-center" > <?php _e('Customize Accordion according to your requirement.','accordio'); ?></h2>
 <?php 
@@ -185,9 +176,9 @@ _e('Copy to Clipboard','accordio'); ?>
    <div class="popup-content pb-2em">
       <div class="popup-header color-white">
          <span class="close-button" onclick="closePop()">&times;</span>
-         <h1 class="color-white text-center">Delete Accordion Panel</h1>
+         <h1 class="color-white text-center"><?php _e('Delete Accordion Panel','accordio'); ?></h1>
       </div>
-      <p class="text-center fs-15px pr-20px pl-20px">Are you sure you want to delete this panel?</p>
+      <p class="text-center fs-15px pr-20px pl-20px"><?php _e('Are you sure you want to delete this panel?','accordio'); ?></p>
       <div class="button-container text-center">
          <input type="hidden" value="-1">
          <button type="button" class="cursor-pointer popup-yes" onclick="handleYes.call(this)">Yes</button>
@@ -195,13 +186,13 @@ _e('Copy to Clipboard','accordio'); ?>
       </div>
       <div class="success-message fs-15px pr-20px pl-20px">
          <span class="tick-icon">✓</span>
-         <span >Accordion panel deleted successfully!</span> <br>
+         <span ><?php _e('Accordion Panel Deleted Successfully!','accordio'); ?></span> <br>
          <button type="button" class="ml-1em cursor-pointer" onclick="closePop()">Ok</button>
       </div>
       <!-- start -->
       <div class="success-icon fs-15px pr-20px pt-15px pl-20px d-none text-center">
          <span class="tick-icon">✓</span>
-         <span >Accordion Icon Updated Successfully!</span> <br>
+         <span ><?php _e('Accordion Icon Updated Successfully!','accordio'); ?></span> <br>
          <button type="button" class="ml-1em cursor-pointer" onclick="closePop()">Ok</button>
       </div>
    </div>
@@ -211,9 +202,9 @@ _e('Copy to Clipboard','accordio'); ?>
   <div class="panel-popupcss width-600px bg-white text-center">      
     <div class="popup-header color-white position-relative">
          <span class="close-button" onclick="closeCss()">&times;</span>
-         <h1 class="color-white text-center">Add Custom CSS</h1>
+         <h1 class="color-white text-center"><?php _e('Add Custom CSS','accordio'); ?></h1>
       </div>
-        <textarea  class='adjustcss  mt-5' name='adjustcss' value='' placeholder="<?php echo "Write your custom css here."; ?>">  <?php echo isset($adjustcss)?$adjustcss:"";?></textarea>
+        <textarea  class='adjustcss  mt-5' name='adjustcss' value='' placeholder="<?php echo "Write your custom css here."; ?>"><?php echo isset($adjustcss)?$adjustcss:"";?></textarea>
         <input type="text" name="custom_class"  value="<?php echo isset($custom_class_dot)?$custom_class_dot:""; ?>" class="d-none mt-1em margin-0-auto mt-9px" placeholder=".red-button .margin-auto"> 
         <button type="button" class="mb-10px" onclick="closeCss()">Ok</button>  
   </div>

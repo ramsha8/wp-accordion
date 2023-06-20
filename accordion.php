@@ -12,23 +12,54 @@
 
  add_action( 'admin_enqueue_scripts', 'EnqueueHandler' );
 function EnqueueHandler( $hook ) {
-    if((get_post_type()=="accordion"))
-            wp_enqueue_script(
-        'ajax-script',
-        plugins_url( 'assets/js/settings.js', __FILE__ ),
-        '1.0.0',
-        true
-    );
+    if((get_post_type()=="accordion")){  
+
+    wp_register_script(
+            'ajax-script',
+            plugins_url( 'assets/js/settings.js', __FILE__ ),
+            array(),
+            '1.0.0',
+            true
+    );             
+    wp_enqueue_script( 'ajax-script' ); 
+ wp_localize_script('ajax-script', 'tStrings', array(
+     'deleteAccordionPanel' => __('Delete Accordion Panel', 'accordio'),
+     'addURL' => __('Enter the URL:','accordio'),
+     'accIconUpdatedTitle'=>__('Accordion Icon Updated','accordio'),
+     'addCustomClasses'=>__('Add Custom Classes','accordio'),
+     'addCustomCSS'=>__('Add Custom CSS','accordio'),
+     'addAcc'=>__('Add Accordion Panel','accordio'),
+     'addAcc2'=>__('Are you sure you want to add a new panel?','accordio'),
+     'delAcc'=>__('Delete Accordion Panel','accordio'),
+     'delAcc2'=>__('Are you sure you want to delete this panel?','accordio'),
+     'accPanelAdd'=>__('Accordion Panel Added Successfully!','accordio'),
+     'accPanelDel'=>__('Accordion Panel Deleted Successfully!','accordio'),
+     'esmall'=>__('Extra small','accordio'),
+     'small'=>__('Small','accordio'),
+     'normal'=>__('Normal','accordio'),
+     'large'=>__('Large','accordio'),
+     'elarge'=>__('Extra large','accordio'),
+     'huge'=>__('Huge','accordio'),
+     'fontsize'=>__('Font Size','accordio'),
+     'sourceEditor'=>__('Source Editor','accordio'),
+     'richTextEditor'=>__('Rich Text Editor','accordio'),
+     'copytoClipboard'=>__('Copy to Clipboard','accordio'),
+     'errorMsg'=>__('Atleast 1 panel is required.','accordio'),
+     'copied'=>__('Copied!','accordio'),
+      'heading'=>__('Write accordion title here.','accordio'),
+     'detail'=>__('Write accordion description here.','accordio'),
+
+    )); 
+               
+
+}
+
     if ( 'toplevel_page_accordion' !== $hook ) {
         return;
     }
-    wp_enqueue_script(
-        'ajax-script',
-        plugins_url( 'assets/js/settings.js', __FILE__ ),
-        '1.0.0',
-        true
-    );
+
 }
+
 
 
 function accordionFrontend($postId = [], $content = null, $tag = '') {
@@ -272,4 +303,3 @@ function AccordMetaBoxRegistrationHandler($post){
 
 require_once('include/build_accordion_interface.php');
     }
-
