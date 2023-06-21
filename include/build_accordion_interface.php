@@ -140,7 +140,7 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
       <?php require('rich_text_editor.php'); ?>
         </div>
 <div class="openPopup text-center" data-column="1">
-  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,1,true,<?php echo($k+1); ?>)"></i>
+  <i class="fa-solid fa-circle-plus fs-16px mt-5 cursor-pointer" onclick="openPopup.call(this,1,true,<?php echo$k; ?>)"></i>
 </div>
   <?php    } ?>
  </div><?php } ?>

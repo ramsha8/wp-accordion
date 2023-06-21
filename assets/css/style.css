@@ -305,7 +305,7 @@ top: 2px;
     border: 1px solid #a8a8a8;
     right: 0;
     bottom: 0;
-        overflow-y: scroll;z-index: 1;
+        overflow-y: scroll;z-index: 2;
 }
 
 .iconsContainer.show {
@@ -502,4 +502,18 @@ div.editor-toolbar>div select {
       .editor-toolbar>div :last-child{
         float: ;
       }
+}
+@media (min-width: 1571px){
+  .icon-size.hover-bbbbbb.cursor-pointer{max-width: 160px;}
+  .dropdown-accordion.hover-bbbbbb.cursor-pointer .dropbtn .fa-solid.plummet{
+    padding-left: 6px;
+    font-size: 16px;
+  }
+   .dropdown-accordion2.hover-bbbbbb.d-flex.flex-flow-col .fa-solid.fs-27px.vertical-up-down{
+    padding-left: 3px;
+    font-size: 16px;
+   }
+   .icon-size.text-center.hover-bbbbbb.cursor-pointer.pb-5px.res-left> .fa-solid.fa-text-height{
+    padding-bottom: 15px;
+   }
 }
