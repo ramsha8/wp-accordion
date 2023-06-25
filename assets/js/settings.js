@@ -134,6 +134,8 @@ function insertLink() {
 function toggleButtonfunc() {
 this.classList.add('d-none');
 this.parentNode.previousElementSibling.style.display='block';
+this.nextElementSibling.style.display='block';
+this.nextElementSibling.nextElementSibling.querySelector('textarea').style.display='block';
 
 }
 
@@ -414,10 +416,10 @@ let css=nextElement.css('display');
 		 nextElement.css('display','block');
 		}
 	}
-function sourceEditorClick() {
+function sourceEditorClick() {console.log("sourceEditorClick");
   var grandparentNode = this.parentNode.parentNode;
   grandparentNode.style.display = 'none';
-  grandparentNode.nextElementSibling.style.display = 'block';
+  //grandparentNode.nextElementSibling.style.display = 'block';
   if (grandparentNode && grandparentNode.nextElementSibling && grandparentNode.nextElementSibling.firstElementChild) {
     var buttonElement = grandparentNode.nextElementSibling.querySelector('button.toggle-button');
 
@@ -425,4 +427,18 @@ function sourceEditorClick() {
       buttonElement.classList.remove('d-none')
     }
   }
+  const grandnextSib = grandparentNode.nextElementSibling;
+console.log("grandnextSib=");
+
+  console.log(grandnextSib);
+const thirdChild = grandnextSib.querySelector(':nth-child(3)');
+console.log("thirdChild");
+console.log(thirdChild);
+
+thirdChild.querySelector('textarea').style.display = 'block';
+  const secondChild = grandnextSib.querySelector(':nth-child(2)');
+
+  secondChild.style.display='none';
+
+  thirdChild.style.display='block';
 }

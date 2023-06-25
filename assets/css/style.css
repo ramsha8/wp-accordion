@@ -402,12 +402,12 @@ div.editor-toolbar button.editor-button  {
 .pb-21px{padding-bottom:21px;}
 input.h-0{height:0;}
 div.accordion span.fa-trash{z-index: 1;}
-/* Styles for mobile ramsha start */
 @media (max-width: 1339px) {
   select.font-size-select{width: 34px;background-position-x: 8px;}
 }
 div.accordion button{outline:none;}
 @media (max-width: 1316px) {
+/* Styles for mobile ramsha start */
   .output.pt-1-6em{text-align: left;}
   .accordion-navbar {
     display: none;
@@ -517,3 +517,4 @@ div.editor-toolbar>div select {
     padding-bottom: 15px;
    }
 }
+.editor-container .toggle-button{top:-1.5em;}
