@@ -51,7 +51,7 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
                     {
                          $caption_accordion = esc_html($accordion_panel_data['caption_accordion']);
                          $accordion_explanation = (wp_kses_post($accordion_panel_data['explanation_accordion']));
-                         if($colum1){$endDivs="";?>
+                         if(isset($colum1) && !empty($colum1)){$endDivs="";?>
  <?php if(!$loopIndex){ ?>  
               <div class="d-flex mt-1em res-d-block">
                 <div class="width-600px column-1 res-text-center">
@@ -149,7 +149,15 @@ $accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(
      if(($loopIndex==ceil($TotalCountOfItems/2)) || ($loopIndex==0) || ($loopIndex<=ceil($TotalCountOfItems/2))){ ?>
    
     <!-- second column start -->
-    <?php if($loopIndex!=0 && $colum1=="0"){ ?></div><?php } ?>
+    <?php if($loopIndex!=0 && $colum1=="0"){ ?></div><?php } 
+    global $post;
+
+    if ( is_object( $post ) && $post->post_type === 'accordion' && $post->post_status === 'draft' ) {
+ ?></div><?php
+}
+// 
+    ?>
+
     <div class="width-600px d-none sec-col column-2 res-ml-0 ml-1em res-text-center">
 
       
