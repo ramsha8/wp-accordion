@@ -303,3 +303,85 @@ function AccordMetaBoxRegistrationHandler($post){
 
 require_once('include/build_accordion_interface.php');
     }
+// r start
+function add_accordion_csv_export_button() {
+    $screen = get_current_screen();
+    if ($screen->post_type === 'accordion' && $screen->base === 'post') {      global $post;
+        ?>
+        <div id="accordion-csv-export" class="alignright" style="position: absolute;z-index: 9000;top:4.9em;right:3em">
+            <button id="accordion-csv-export-btn" class="button" data-post-id="<?php echo esc_attr($post->ID); ?>" onclick="accordion_csv_export()">CSV Export</button>
+        </div>
+        <?php
+    }
+}
+add_action('admin_head', 'add_accordion_csv_export_button');
+
+
+// Export accordion data to CSV.
+function accordion_csv_export() {//echo'<pre>';print_r(($_POST['action']));die;
+    if (isset($_POST['action']) && $_POST['action'] === 'export_accordion_csv' && isset($_POST['post_id'])) {
+        $post_id = intval($_POST['post_id']);
+        check_admin_referer('export_accordion_csv', 'export_accordion_csv_nonce');
+
+        $accordion = get_post($post_id);
+
+        if ($accordion->post_type === 'accordion') {
+            $filename = 'accordion_' . $post_id . '.csv';
+
+            // Set the CSV delimiter and line endings.
+            $delimiter = ',';
+            $line_ending = "\r\n";
+
+            // Output CSV headers.
+            header('Content-Type: text/csv; charset=utf-8');
+            header("Content-Disposition: attachment; filename=$filename");
+
+            // Open output stream.
+            $output = fopen('php://output', 'w');
+
+            // Output CSV column headers.
+            fputcsv($output, array( 'Title', 'Content'), $delimiter);
+$accordionContent = ((get_post_meta($accordion->ID, 'parameters_accordion', true)));
+
+$accordionContent = unserialize( preg_replace_callback ('/(?<=^|\{|;)s:(\d+):\"(.*?)\";(?=[asbdiO]\:\d|N;|\}|$)/s',
+    function($m){
+        return 's:' . strlen($m[2]) . ':"' . $m[2] . '";';
+    },$accordionContent ));
+foreach($accordionContent as $accordion_panel_data){
+                $row = array(
+                $accordion_panel_data['caption_accordion'],
+                str_replace('&nbsp;', ' ',strip_tags(stripslashes(htmlspecialchars_decode($accordion_panel_data['explanation_accordion'])))),
+            );
+
+            fputcsv($output, $row, $delimiter);
+}
+            // Output CSV row for the current accordion.
+
+
+            // Close output stream.
+            fclose($output);
+
+            // Stop WordPress from generating additional output.
+            exit();
+        }
+    }
+}
+add_action('admin_post_export_accordion_csv', 'accordion_csv_export');
+
+// Enqueue JavaScript for handling the CSV Export button click.
+function enqueue_accordion_csv_export_script() {
+    $screen = get_current_screen();
+    if ($screen->post_type === 'accordion' && $screen->base === 'post') {
+        wp_enqueue_script('accordion-csv-export', plugin_dir_url(__FILE__) . 'accordion-csv-export.js', array('jquery'), '1.0', true);
+global $post;
+        // Pass admin URL to JavaScript.
+        wp_localize_script('accordion-csv-export', 'accordionExportVars', array(
+            'adminUrl' => admin_url('admin-post.php'),
+            'exportNonce' => wp_create_nonce('export_accordion_csv'),
+            'postId' => $post->ID,
+        ));
+    }
+}
+add_action('admin_enqueue_scripts', 'enqueue_accordion_csv_export_script');
+
+// Export accordion data to CSV.

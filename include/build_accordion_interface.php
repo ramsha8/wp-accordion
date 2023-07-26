@@ -5,6 +5,11 @@
  <div class="wrap pr-20px" >
       <h1 class="res-text-center" ><?php _e('Edit Accordion','accordio'); ?></h1>
       <h2 class="res-text-center" > <?php _e('Customize Accordion according to your requirement.','accordio'); ?></h2>
+      <!-- r start -->
+      <div id="accordion-csv-export" class="alignright">
+        <a href="<?php echo esc_url(add_query_arg('export', 'csv', get_edit_post_link())); ?>" class="button">CSV Export</a>
+      </div><br>
+      <!-- r end -->
 <?php 
 // settings separat file
 require('app_configuration.php');
