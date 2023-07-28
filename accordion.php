@@ -303,19 +303,6 @@ function AccordMetaBoxRegistrationHandler($post){
 
 require_once('include/build_accordion_interface.php');
     }
-// r start
-function add_accordion_csv_export_button() {
-    $screen = get_current_screen();
-    if ($screen->post_type === 'accordion' && $screen->base === 'post') {      global $post;
-        ?>
-        <div id="accordion-csv-export" class="alignright" style="position: absolute;z-index: 9000;top:4.9em;right:3em">
-            <button id="accordion-csv-export-btn" class="button" data-post-id="<?php echo esc_attr($post->ID); ?>" onclick="accordion_csv_export()">CSV Export</button>
-        </div>
-        <?php
-    }
-}
-add_action('admin_head', 'add_accordion_csv_export_button');
-
 
 // Export accordion data to CSV.
 function accordion_csv_export() {//echo'<pre>';print_r(($_POST['action']));die;
