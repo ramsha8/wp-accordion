@@ -359,7 +359,7 @@ add_action('admin_post_export_accordion_csv', 'accordion_csv_export');
 function enqueue_accordion_csv_export_script() {
     $screen = get_current_screen();
     if ($screen->post_type === 'accordion' && $screen->base === 'post') {
-        wp_enqueue_script('accordion-csv-export', plugin_dir_url(__FILE__) . 'accordion-csv-export.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('accordion-csv-export', plugin_dir_url(__FILE__) . 'assets/js/accordion-csv-export.js', array('jquery'), '1.0', true);
 global $post;
         // Pass admin URL to JavaScript.
         wp_localize_script('accordion-csv-export', 'accordionExportVars', array(
