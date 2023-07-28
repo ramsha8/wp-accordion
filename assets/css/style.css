@@ -170,7 +170,7 @@ iframe html,iframe html{
 background:#d3d3d3;
 }
 .wp-editor-wrap{width:591px;}
-/*ramsha start*/
+
 .editor-container {
   position: relative;
 
@@ -407,7 +407,7 @@ div.accordion span.fa-trash{z-index: 1;}
 }
 div.accordion button{outline:none;}
 @media (max-width: 1316px) {
-/* Styles for mobile ramsha start */
+/* Styles for mobile start */
   .output.pt-1-6em{text-align: left;}
   .accordion-navbar {
     display: none;
