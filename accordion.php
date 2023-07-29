@@ -1,7 +1,7 @@
 <?php 
  /*
  * Plugin Name:       Accordion
- * Description:       Add plugin on your website with Accordion plugin
+ * Description:       Add plugin on your website with Accordion plugin.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2

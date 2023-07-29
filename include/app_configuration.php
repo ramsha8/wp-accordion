@@ -108,9 +108,9 @@ color:<?php echo sanitize_hex_color($titlecolor); ?>;
 </div>     
           <!-- csv export start -->
     
-      <div class="text-center cursor-pointer hover-bbbbbb text-center res-left">
+      <div class="text-center cursor-pointer hover-bbbbbb text-center res-left res-mt-1em">
         <i class="fa-solid fa-file-csv font-size-2-8em mt-5 res-left mb-12px"></i>
-        <button onclick="accordion_csv_export()" class="button" type="button">CSV Export</button>
+        <button onclick="accordion_csv_export()" class="button res-fs-11pxi" type="button"><?php _e('CSV Export','accordio'); ?></button>
       </div><br>
     
           <!-- csv export end -->

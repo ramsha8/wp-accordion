@@ -412,7 +412,8 @@ div.accordion button{outline:none;}
   .accordion-navbar {
     display: none;
   }
-
+  div.res-mt-1em{margin-top:1em;}
+ button.res-fs-11pxi{font-size: 11px !important;}
   .navbar-toggle {
     display: flex;
     flex-direction: column;
